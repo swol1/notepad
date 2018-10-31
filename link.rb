@@ -14,7 +14,21 @@ class Link < Post
   end
 
   def to_strings
-     time_string = @created_at.strftime("%d.%m.%Y, %H:%M")
-     [@url, @text, time_string]
+    time_string = @created_at.strftime("%d.%m.%Y, %H:%M")
+    [@url, @text, time_string]
+  end
+
+  def to_db_hash
+    return super.merge(
+      {
+        'text' => @text,
+        'url' => @url
+      }
+    )
+  end
+
+  def load_data(data_hash)
+    super(data_hash)
+    @url = data_hash['url']
   end
 end
