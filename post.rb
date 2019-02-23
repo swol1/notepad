@@ -9,7 +9,7 @@ class Post
   end
 
   def self.post_types
-    {'Memo' => Memo, 'Task' => Task, 'Link' => Link}
+    { 'Memo' => Memo, 'Task' => Task, 'Link' => Link }
   end
 
   def self.create(type)
@@ -84,7 +84,7 @@ class Post
 
   def save
     file = File.new(file_path, "w:UTF-8")
-    to_strings.each {|string| file.puts(string)}
+    to_strings.each { |string| file.puts(string) }
     file.close
   end
 

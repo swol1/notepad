@@ -25,4 +25,3 @@ entry.read_from_console
 rowid = entry.save_to_db
 
 puts "Ваша запись сохранена! id = #{rowid}"
-

@@ -16,13 +16,13 @@ OptionParser.new do |opt|
   end
 
   opt.on('--type POST_TYPE', 'какой тип постов показывать ' \
-         '(по умолчанию любой)') {|o| options[:type] = o}
+         '(по умолчанию любой)') { |o| options[:type] = o }
 
   opt.on('--id POST_ID', 'если задан id — показываем подробно ' \
-         ' только этот пост') {|o| options[:id] = o}
+         ' только этот пост') { |o| options[:id] = o }
 
   opt.on('--limit NUMBER', 'сколько последних постов показать ' \
-         '(по умолчанию все)') {|o| options[:limit] = o}
+         '(по умолчанию все)') { |o| options[:limit] = o }
 end.parse!
 
 result =
@@ -36,9 +36,7 @@ result =
 if result.is_a? Post
   puts "Запись #{result.class.name}, id = #{options[:id]}"
 
-  result.to_strings.each do |line|
-    puts line
-  end
+  result.to_strings.each { |line| puts line }
 else
   print '| id                 '
   print '| @type              '
