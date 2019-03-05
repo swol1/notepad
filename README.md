@@ -5,6 +5,7 @@
 
 ## Стек
 Ruby 2.5.0+
+
 [SQLite](https://www.sqlite.org/download.html)
 
 ## Установка
